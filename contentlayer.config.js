@@ -27,12 +27,12 @@ const computedFields = {
 			dateModified: doc.publishedAt,
 			description: doc.summary,
 			image: doc.image
-				? `https://leerob.io${doc.image}`
-				: `https://leerob.io/og?title=${doc.title}`,
-			url: `https://leerob.io/blog/${doc._raw.flattenedPath}`,
+				? `https://www.tarunyadav.xyz${doc.image}`
+				: `https://www.tarunyadav.xyz/og?title=${doc.title}`,
+			url: `https://www.tarunyadav.xyz/blog/${doc._raw.flattenedPath}`,
 			author: {
 				'@type': 'Person',
-				name: 'Lee Robinson',
+				name: 'Tarun Yadav',
 			},
 		}),
 	},

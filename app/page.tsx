@@ -122,7 +122,7 @@ export default async function Page() {
 			<div className="mt-16">
 				<h3 className="mb-8 font-bold text-xl text-neutral-200">Writing 📚</h3>
 
-				<li className="flex gap-3 md:gap-6 flex-wrap md:-ml-4 justify-between">
+				<li className="flex gap-3 md:gap-6 flex-wrap md:-ml-4">
 					{allBlogs
 						.sort((a, b) => {
 							if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
