@@ -20,27 +20,35 @@ export const projectInfo: ProjectInfo[] = [
         title: 'Cross-Chain Swap',
         details:
             'The ZetaLabs Swap App uses the simplicity and power of ZetaChain’s native value transfer — with no bridging, wrapping, or locking of assets — to achieve any-to-any token/chain trades.',
-        tech: ['React', 'Next.js', 'TailwindCSS', "Sentry", 'RainbowKit', 'EtherJs'],
+        tech: ['Next.js', 'TailwindCSS', "Sentry", 'RainbowKit', 'EtherJs', 'NextAuth.js'],
         imagesLinks: [
-            '/images/projects/diva-website-1.png',
-            '/images/projects/diva-website-2.png',
-            '/images/projects/diva-website-3.png',
+            // '/images/projects/diva-website-1.png',
+            // '/images/projects/diva-website-2.png',
+            // '/images/projects/diva-website-3.png',
         ],
-        link: 'https://www.google.com',
+        link: 'https://labs.zetachain.com/swap',
     },
     {
-        year: '2020',
-        title: 'Project 1',
+        year: '2022',
+        title: 'ZetaChain Explore',
         details:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-        tech: ['React', 'Next.js', 'Tailwind CSS'],
+            'ZetaChain maintained explorer. You can view recent ZetaChain transactions and track the status of cross-chain transactions end- to-end.',
+        tech: ['Next.js', 'Tailwind CSS', 'Emotion'],
         imagesLinks: [
-            '/images/projects/diva-website-1.png',
-            '/images/projects/diva-website-2.png',
-            '/images/projects/diva-website-3.png',
+            // '/images/projects/zeta-explore-1.png',
+            // '/images/projects/zeta-explore-2.png',
+            // '/images/projects/zeta-explore-3.png',
         ],
-        link: 'https://www.google.com',
+        link: 'https://explorer.zetachain.com/',
     },
+    {
+        year: '2023',
+        title: 'Diva Protocol website',
+        details: 'A website for the Diva Protocol. Built with React, Redux Toolkit, Chakra UI, EtherJS, rainbowkit, wagmi hooks.',
+        tech: ['React', 'Redux Toolkit', 'Chakra ui', 'EtherJS', 'rainbowkit', 'wagmi hooks'],
+        imagesLinks: [],
+        link: 'https://www.divaprotocol.io/',
+    }
 ]
 
 export const sideProjectsInfo: ProjectInfo[] = [
@@ -51,9 +59,9 @@ export const sideProjectsInfo: ProjectInfo[] = [
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
         tech: ['React', 'Next.js', 'Tailwind CSS'],
         imagesLinks: [
-            '/images/projects/diva-website-1.png',
-            '/images/projects/diva-website-2.png',
-            '/images/projects/diva-website-3.png',
+            // '/images/projects/diva-website-1.png',
+            // '/images/projects/diva-website-2.png',
+            // '/images/projects/diva-website-3.png',
         ],
         link: 'https://www.google.com',
     },
