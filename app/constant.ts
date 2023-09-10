@@ -53,17 +53,17 @@ export const projectInfo: ProjectInfo[] = [
 
 export const sideProjectsInfo: ProjectInfo[] = [
     {
-        year: '2021',
-        title: 'Project 1',
+        year: '2023',
+        title: 'aigit',
         details:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-        tech: ['React', 'Next.js', 'Tailwind CSS'],
+            'aigit is a command-line tool that leverages the power of AI to automatically generate commit messages for your Git repositories',
+        tech: ['Node.js', 'openai', 'typescript', 'cleye', 'execa'],
         imagesLinks: [
             // '/images/projects/diva-website-1.png',
             // '/images/projects/diva-website-2.png',
             // '/images/projects/diva-website-3.png',
         ],
-        link: 'https://www.google.com',
+        link: 'https://www.npmjs.com/package/@tarunyadav9761/aigit',
     },
 ]
 
@@ -72,12 +72,12 @@ export const workExperienceInfo = [
         companyName: 'Diva Protocol',
         companyLink: 'https://www.divaprotocol.io/',
         role: 'Frontend Developer',
-        year: '2021 - Present',
+        year: '2022 - Present',
     },
     {
-        companyName: 'Diva Protocol',
-        companyLink: 'https://www.divaprotocol.io/',
+        companyName: 'ZetaChain',
+        companyLink: 'https://www.zetachain.com/',
         role: 'Frontend Developer',
-        year: '2021 - Present',
+        year: 'Jan 2022 - June 2022',
     },
 ]
