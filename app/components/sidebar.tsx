@@ -90,7 +90,7 @@ export default function Navbar() {
 						</div>
 
 						<div className="flex items-center gap-4">
-							<ModeToggle />
+							{/* <ModeToggle /> */}
 							{SOCIAL_LINKS.map((link) => (
 								<a
 									key={link.href}
