@@ -10,6 +10,12 @@ import { config } from '../constant'
 import { ModeToggle } from './toggle-theme'
 import { Button } from './ui/button'
 import React from 'react'
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipProvider,
+	TooltipTrigger,
+} from '@/app/components/ui/tooltip'
 
 const navItems = {
 	'/': {
@@ -89,25 +95,34 @@ export default function Navbar() {
 							})}
 						</div>
 
-						<div className="flex items-center gap-4">
-							{/* <ModeToggle /> */}
-							{SOCIAL_LINKS.map((link) => (
-								<a
-									key={link.href}
-									href={link.href}
-									target="_blank"
-									rel="noopener noreferrer">
-									<Button
-										style={hoveredLink === link.href ? hoverStyle : {}}
-										onMouseEnter={() => setHoveredLink(link.href)}
-										onMouseLeave={() => setHoveredLink(null)}
-										size="icon"
-										className="bg-transparent text-slate-200 ">
-										<link.icon className="h-[1.2rem] w-[1.2rem]" />
-									</Button>
-								</a>
-							))}
-						</div>
+						<TooltipProvider delayDuration={0}>
+							<div className="flex items-center gap-4">
+								{/* <ModeToggle /> */}
+								{SOCIAL_LINKS.map((link) => (
+									<Tooltip>
+										<TooltipTrigger>
+											<a
+												key={link.href}
+												href={link.href}
+												target="_blank"
+												rel="noopener noreferrer">
+												<Button
+													style={hoveredLink === link.href ? hoverStyle : {}}
+													onMouseEnter={() => setHoveredLink(link.href)}
+													onMouseLeave={() => setHoveredLink(null)}
+													size="icon"
+													className="bg-transparent text-slate-200 ">
+													<link.icon className="h-[1.2rem] w-[1.2rem]" />
+												</Button>
+											</a>
+										</TooltipTrigger>
+										<TooltipContent side="bottom">
+											<p>{link.alt}</p>
+										</TooltipContent>
+									</Tooltip>
+								))}
+							</div>
+						</TooltipProvider>
 					</nav>
 				</LayoutGroup>
 			</div>
