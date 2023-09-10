@@ -74,13 +74,15 @@ const WorkExperienceSection = () => {
 							{year}
 						</span>
 						<div className="flex flex-col gap-3">
+							<span className="text-gray-200">{role}</span>
 							<a href={companyLink} target="_blank" className="hover:underline">
 								<div className="flex items-center gap-2">
-									<span className="text-gray-200">{role}</span>
+									<div className="text-neutral-400 text-base">
+										{companyName}
+									</div>
 									<ExternalLinkIcon />
 								</div>
 							</a>
-							<div className="text-neutral-400 text-base">{companyName}</div>
 						</div>
 					</div>
 				))}
