@@ -58,10 +58,7 @@ export default async function Blog({ params }) {
 		notFound()
 	}
 
-	const [allViews, tweets] = await Promise.all([
-		getViewsCount(),
-		getTweets(post.tweetIds),
-	])
+	const [allViews] = await Promise.all([getViewsCount()])
 
 	return (
 		<section>
@@ -77,7 +74,7 @@ export default async function Blog({ params }) {
 				</p>
 				<ViewCounter allViews={allViews} slug={post.slug} trackView />
 			</div>
-			<Mdx code={post.body.code} tweets={tweets} />
+			<Mdx code={post.body.code} />
 		</section>
 	)
 }
