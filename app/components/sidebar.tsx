@@ -5,9 +5,8 @@ import clsx from 'clsx'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { LayoutGroup, motion } from 'framer-motion'
-import Image from 'next/image'
+
 import { config } from '../constant'
-import { ModeToggle } from './toggle-theme'
 import { Button } from './ui/button'
 import React from 'react'
 import {
@@ -57,64 +56,63 @@ export default function Navbar() {
 	}
 
 	return (
-		<aside className="-ml-[8px] mb-16 tracking-tight">
-			<div className="lg:sticky lg:top-20">
-				<LayoutGroup>
-					<nav
-						className="flex flex-row items-start justify-between relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
-						id="nav">
-						<div className="flex flex-row space-x-0 pr-10">
-							{Object.entries(navItems).map(([path, { name }]) => {
-								const isActive = path === pathname
-								return (
-									<Link
-										key={path}
-										href={path}
-										className={clsx(
-											'transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle',
-											{
-												'text-neutral-500': !isActive,
-											}
-										)}>
-										<span className="relative py-1 px-2">
-											{name}
-											{path === pathname ? (
-												<motion.div
-													className="absolute h-[1px] top-7 mx-2 inset-0 bg-neutral-200 dark:bg-neutral-800 z-[-1] dark:bg-gradient-to-r from-transparent to-neutral-900"
-													layoutId="sidebar"
-													transition={{
-														type: 'spring',
-														stiffness: 350,
-														damping: 30,
-													}}
-												/>
-											) : null}
-										</span>
-									</Link>
-								)
-							})}
-						</div>
+		<TooltipProvider delayDuration={0}>
+			<aside className="-ml-[8px] mb-16 tracking-tight">
+				<div className="lg:sticky lg:top-20">
+					<LayoutGroup>
+						<nav
+							className="flex flex-row items-start justify-between relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
+							id="nav">
+							<div className="flex flex-row space-x-0 pr-10">
+								{Object.entries(navItems).map(([path, { name }]) => {
+									const isActive = path === pathname
+									return (
+										<Link
+											key={path}
+											href={path}
+											className={clsx(
+												'transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle',
+												{
+													'text-neutral-500': !isActive,
+												}
+											)}>
+											<span className="relative py-1 px-2">
+												{name}
+												{path === pathname ? (
+													<motion.div
+														className="absolute h-[1px] top-7 mx-2 inset-0 bg-neutral-200 dark:bg-neutral-800 z-[-1] dark:bg-gradient-to-r from-transparent to-neutral-900"
+														layoutId="sidebar"
+														transition={{
+															type: 'spring',
+															stiffness: 350,
+															damping: 30,
+														}}
+													/>
+												) : null}
+											</span>
+										</Link>
+									)
+								})}
+							</div>
 
-						<TooltipProvider delayDuration={0}>
 							<div className="flex items-center gap-4">
-								{/* <ModeToggle /> */}
 								{SOCIAL_LINKS.map((link) => (
-									<Tooltip>
-										<TooltipTrigger>
-											<a
-												key={link.href}
-												href={link.href}
-												target="_blank"
-												rel="noopener noreferrer">
-												<Button
-													style={hoveredLink === link.href ? hoverStyle : {}}
-													onMouseEnter={() => setHoveredLink(link.href)}
-													onMouseLeave={() => setHoveredLink(null)}
-													size="icon"
-													className="bg-transparent text-slate-200 ">
+									<Tooltip key={link.href}>
+										<TooltipTrigger asChild>
+											<Button
+												style={hoveredLink === link.href ? hoverStyle : {}}
+												onMouseEnter={() => setHoveredLink(link.href)}
+												onMouseLeave={() => setHoveredLink(null)}
+												size="icon"
+												className="bg-transparent text-slate-200 ">
+												<a
+													key={link.href}
+													href={link.href}
+													target="_blank"
+													rel="noopener noreferrer">
 													<link.icon className="h-[1.2rem] w-[1.2rem]" />
-												</Button>
-											</a>
+												</a>
+											</Button>
 										</TooltipTrigger>
 										<TooltipContent side="bottom">
 											<p>{link.alt}</p>
@@ -122,10 +120,10 @@ export default function Navbar() {
 									</Tooltip>
 								))}
 							</div>
-						</TooltipProvider>
-					</nav>
-				</LayoutGroup>
-			</div>
-		</aside>
+						</nav>
+					</LayoutGroup>
+				</div>
+			</aside>
+		</TooltipProvider>
 	)
 }
