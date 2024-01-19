@@ -12,6 +12,7 @@ import {
 	sideProjectsInfo,
 } from './constant'
 import clsx from 'clsx'
+import Card from './components/Card'
 
 const ProjectSection = ({
 	projectInfo,
@@ -41,7 +42,8 @@ const ProjectSection = ({
 								<div className="text-neutral-400 text-base">{details}</div>
 								<div>
 									{tech.map((tech) => (
-										<span className="mr-2 text-xs bg-[#201E20] p-2 rounded text-neutral-300 tracking-tight text-muted-foreground">
+										// class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 font-medium leading-5 text-teal-300 "
+										<span className="mr-2 text-xs bg-teal-400/10 p-2 rounded-full leading-5 text-teal-300 tracking-tight text-muted-foreground">
 											{tech}
 										</span>
 									))}
@@ -147,27 +149,29 @@ export default async function Page() {
 						.slice(0, 3)
 						.map((post) => (
 							<Link key={post.slug} href={`/blog/${post.slug}`} className="">
-								<div
-									className={clsx(
-										'rounded-md p-[0.5px] flex flex-col justify-between items-center w-full md:w-auto min-h-full '
-									)}>
+								<Card>
 									<div
 										className={clsx(
-											'flex flex-col justify-between min-h-[210px] w-full md:w-[188px] gap-2 py-6 px-4 hover:bg-gradient-to-r dark:from-[#15192D] dark:to-[#27141C] rounded-md hover:ease-linear duration-400 cursor-default h-full dark:bg-[#111010] '
+											'rounded-md p-[0.5px] flex flex-col justify-between items-center w-full md:w-auto min-h-full '
 										)}>
-										<div className="flex flex-col gap-2">
-											<span className="text-base font-bold dark:text-neutral-300">
-												{post.smallTitle}
-											</span>
-											<span className="dark:text-neutral-400 text-sm">
-												{post.summary}
-											</span>
+										<div
+											className={clsx(
+												'flex flex-col justify-between min-h-[210px] w-full md:w-[188px] gap-2 py-6 px-4 rounded-md hover:ease-linear duration-400 cursor-default h-full'
+											)}>
+											<div className="flex flex-col gap-2">
+												<span className="text-base font-bold dark:text-neutral-300">
+													{post.smallTitle}
+												</span>
+												<span className="dark:text-neutral-400 text-sm">
+													{post.summary}
+												</span>
+											</div>
+											<time className="dark:text-neutral-400 text-xs">
+												{formatDate(post.publishedAt)}
+											</time>
 										</div>
-										<time className="dark:text-neutral-400 text-xs">
-											{formatDate(post.publishedAt)}
-										</time>
 									</div>
-								</div>
+								</Card>
 							</Link>
 						))}
 				</li>
