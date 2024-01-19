@@ -69,10 +69,16 @@ export const sideProjectsInfo: ProjectInfo[] = [
 
 export const workExperienceInfo = [
     {
+        companyName: 'Chatterly',
+        companyLink: 'https://usechatterly.com/',
+        role: 'Frontend Developer',
+        year: 'Jan 2022 - Present',
+    },
+    {
         companyName: 'Diva Protocol',
         companyLink: 'https://www.divaprotocol.io/',
         role: 'Frontend Developer',
-        year: '2022 - Present',
+        year: 'Jan 2022 - Nov 2023',
     },
     {
         companyName: 'ZetaChain',
@@ -80,4 +86,9 @@ export const workExperienceInfo = [
         role: 'Frontend Developer',
         year: 'Jan 2022 - June 2022',
     },
+    {
+        companyName: 'Frontend Developer (Freelance)',
+        role: 'Frontend Developer',
+        year: 'Jan 2021 - Jan 2022',
+    }
 ]

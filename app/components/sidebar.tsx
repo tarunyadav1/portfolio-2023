@@ -26,6 +26,9 @@ const navItems = {
 	'/guestbook': {
 		name: 'guestbook',
 	},
+	'/resume.pdf': {
+		name: 'resume',
+	},
 }
 
 const SOCIAL_LINKS = [
